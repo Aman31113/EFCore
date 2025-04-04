@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|c:\\users\\2401694\\onedrive - cognizant\\desktop\\all about c#\\efcore_mvc\\efcore_mvc\\models\\efcoreemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|solutionrelative:efcore_mvc\\models\\efcoreemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|c:\\users\\2401694\\onedrive - cognizant\\desktop\\all about c#\\efcore_mvc\\efcore_mvc\\models\\efcorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|solutionrelative:efcore_mvc\\models\\efcorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|c:\\users\\2401694\\onedrive - cognizant\\desktop\\all about c#\\efcore_mvc\\efcore_mvc\\controllers\\efcoreemployeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|solutionrelative:efcore_mvc\\controllers\\efcoreemployeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|c:\\users\\2401694\\onedrive - cognizant\\desktop\\all about c#\\efcore_mvc\\efcore_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|solutionrelative:efcore_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|c:\\users\\2401694\\onedrive - cognizant\\desktop\\all about c#\\efcore_mvc\\efcore_mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABB799C8-DD2D-4B3A-AE95-E0AD1FF2B4BD}|EFCORE_MVC\\EFCORE_MVC.csproj|solutionrelative:efcore_mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EfcoreEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Models\\EfcoreEmployee.cs",
+              "RelativeDocumentMoniker": "EFCORE_MVC\\Models\\EfcoreEmployee.cs",
+              "ToolTip": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Models\\EfcoreEmployee.cs",
+              "RelativeToolTip": "EFCORE_MVC\\Models\\EfcoreEmployee.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T09:33:31.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Program.cs",
+              "RelativeDocumentMoniker": "EFCORE_MVC\\Program.cs",
+              "ToolTip": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Program.cs",
+              "RelativeToolTip": "EFCORE_MVC\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T09:18:07.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EfcoreEmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Controllers\\EfcoreEmployeesController.cs",
+              "RelativeDocumentMoniker": "EFCORE_MVC\\Controllers\\EfcoreEmployeesController.cs",
+              "ToolTip": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Controllers\\EfcoreEmployeesController.cs",
+              "RelativeToolTip": "EFCORE_MVC\\Controllers\\EfcoreEmployeesController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T09:12:09.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EfcoreContext.cs",
+              "DocumentMoniker": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Models\\EfcoreContext.cs",
+              "RelativeDocumentMoniker": "EFCORE_MVC\\Models\\EfcoreContext.cs",
+              "ToolTip": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Models\\EfcoreContext.cs",
+              "RelativeToolTip": "EFCORE_MVC\\Models\\EfcoreContext.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T09:03:21.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EFCORE_MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_MVC\\EFCORE_MVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EFCORE_MVC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-04T08:55:42.285Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

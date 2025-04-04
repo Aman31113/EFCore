@@ -1,0 +1,47 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_Test\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA30115-C68E-431E-97AA-E0F18977A3B2}|EFCORE_Test\\EFCORE_Test.csproj|c:\\users\\2401694\\onedrive - cognizant\\desktop\\all about c#\\efcore_test\\efcore_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA30115-C68E-431E-97AA-E0F18977A3B2}|EFCORE_Test\\EFCORE_Test.csproj|solutionrelative:efcore_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_Test\\EFCORE_Test\\Program.cs",
+              "RelativeDocumentMoniker": "EFCORE_Test\\Program.cs",
+              "ToolTip": "C:\\Users\\2401694\\OneDrive - Cognizant\\Desktop\\All About C#\\EFCORE_Test\\EFCORE_Test\\Program.cs*",
+              "RelativeToolTip": "EFCORE_Test\\Program.cs*",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T09:10:50.577Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

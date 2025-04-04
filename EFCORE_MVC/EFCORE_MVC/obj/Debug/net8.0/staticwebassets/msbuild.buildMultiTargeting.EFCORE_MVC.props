@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EFCORE_MVC.props" />
+</Project>
