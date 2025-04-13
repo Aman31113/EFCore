@@ -1,0 +1,444 @@
+Hotels.cs
+
+using System.ComponentModel.DataAnnotations;
+
+namespace HungryHound.Models
+{
+    public class Hotels
+    {
+        [Key]
+        public int HotelId { get; set; }
+
+        [Required(ErrorMessage = "Please enter the Hotel Name")]
+        public string HotelName { get; set; }
+
+        [Required(ErrorMessage = "Please enter the City")]
+        public string City { get; set; }
+    }
+}
+
+
+
+Menu.cs
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace HungryHound.Models
+{
+    public class Menu
+    {
+        [Key]
+        public int MenuId { get; set; }
+
+        [Required(ErrorMessage = "Please enter the Menu Name")]
+        [Display(Name = "Menu Name")]
+        public string NameOfMenu { get; set; }
+
+        [Required(ErrorMessage = "Please enter the Price")]
+        public decimal Price { get; set; }
+
+        [Display(Name = "Hotel Name")]
+        public int HotelId { get; set; }
+
+        [NotMapped]
+        public Hotels? hotels { get; set; }
+
+        [NotMapped]
+        public SelectList? HotelList { get; set; }
+    }
+}
+
+
+Order.cs
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace HungryHound.Models
+{
+    public class Order
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Please enter the Quantity")]
+        public decimal Quantity { get; set; }
+
+        [Display(Name = "Menu Name")]
+        public int MenuId { get; set; }
+
+        [NotMapped]
+        public Menu? menu { get; set; }
+
+        [NotMapped]
+        public SelectList? MenuList { get; set; }
+    }
+}
+
+
+
+DataContext.cs
+
+using Microsoft.EntityFrameworkCore;
+using HungryHound.Models;
+
+namespace HungryHound.Data
+{
+    public class DataContext : DbContext
+    {
+        public DataContext(DbContextOptions<DataContext> options) : base(options) {}
+
+        public DbSet<Hotels> HotelsList { get; set; }
+        public DbSet<Menu> MenuItems { get; set; }
+        public DbSet<Order> OrderItems { get; set; }
+    }
+}
+
+
+HomeController.cs
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace HungryHound.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}
+
+
+
+FoodDeliveryController.cs
+
+
+using Microsoft.AspNetCore.Mvc;
+using HungryHound.Data;
+using HungryHound.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace HungryHound.Controllers
+{
+    public class FoodDeliveryController : Controller
+    {
+        public DataContext _dataContext;
+
+        public FoodDeliveryController(DataContext dataContext)
+        {
+            _dataContext = dataContext;
+        }
+
+        // Hotels
+        [HttpGet]
+        public IActionResult CreateHotel()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateHotel(Hotels hotels)
+        {
+            if (!ModelState.IsValid)
+                return View(hotels);
+
+            _dataContext.HotelsList.Add(hotels);
+            _dataContext.SaveChanges();
+
+            ViewBag.Message = "Hotel details Successfully Added";
+            return View();
+        }
+
+        public IActionResult GetHotelList()
+        {
+            var hotels = _dataContext.HotelsList.ToList();
+            return View(hotels);
+        }
+
+        // Menu
+        [HttpGet]
+        public IActionResult CreateMenu()
+        {
+            var menu = new Menu
+            {
+                HotelList = new SelectList(_dataContext.HotelsList, "HotelId", "HotelName")
+            };
+            return View(menu);
+        }
+
+        [HttpPost]
+        public IActionResult CreateMenu(Menu menu)
+        {
+            if (!ModelState.IsValid)
+            {
+                menu.HotelList = new SelectList(_dataContext.HotelsList, "HotelId", "HotelName");
+                return View(menu);
+            }
+
+            _dataContext.MenuItems.Add(menu);
+            _dataContext.SaveChanges();
+            ViewBag.Message = "Menu Items Successfully Added";
+            return View();
+        }
+
+        public IActionResult GetMenuList()
+        {
+            var menu = _dataContext.MenuItems.ToList();
+            return View(menu);
+        }
+
+        // Order
+        [HttpGet]
+        public IActionResult OrderPlacing()
+        {
+            var order = new Order
+            {
+                MenuList = new SelectList(_dataContext.MenuItems, "MenuId", "NameOfMenu")
+            };
+            return View(order);
+        }
+
+        [HttpPost]
+        public IActionResult OrderPlacing(Order order)
+        {
+            if (!ModelState.IsValid)
+            {
+                order.MenuList = new SelectList(_dataContext.MenuItems, "MenuId", "NameOfMenu");
+                return View(order);
+            }
+
+            _dataContext.OrderItems.Add(order);
+            _dataContext.SaveChanges();
+            ViewBag.Message = "Order Successfully Placed";
+            return View();
+        }
+
+        public IActionResult GetOrderList()
+        {
+            var orders = _dataContext.OrderItems.ToList();
+            return View(orders);
+        }
+    }
+}
+
+
+
+
+Views/Home/Index.cshtml
+
+@{
+    ViewData["Title"] = "Index Page";
+}
+
+<h2>Welcome to Hungry Hound</h2>
+
+<a id="btnCreateHtl" href="/FoodDelivery/CreateHotel">Create Hotel</a> |
+<a id="btnViewHtl" href="/FoodDelivery/GetHotelList">View Hotels</a><br><br>
+
+<a id="btnCreateMnu" href="/FoodDelivery/CreateMenu">Create Menu</a> |
+<a id="btnViewMnu" href="/FoodDelivery/GetMenuList">View Menus</a><br><br>
+
+<a id="btnCreateOrd" href="/FoodDelivery/OrderPlacing">Place Order</a> |
+<a id="btnViewOrd" href="/FoodDelivery/GetOrderList">View Orders</a>
+
+
+
+CreateHotel.cshtml
+
+@model HungryHound.Models.Hotels
+
+@{
+    ViewData["Title"] = "Create Hotel";
+}
+
+<h2>Create Hotel</h2>
+
+<form asp-action="CreateHotel" method="post">
+    <div>
+        <label asp-for="HotelName"></label>
+        <input asp-for="HotelName" />
+        <span asp-validation-for="HotelName"></span>
+    </div>
+
+    <div>
+        <label asp-for="City"></label>
+        <input asp-for="City" />
+        <span asp-validation-for="City"></span>
+    </div>
+
+    <button type="submit" id="btnHotel">Create Hotel</button>
+</form>
+
+<h2 id="Message">@ViewBag.Message</h2>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+GetHotelList.cshtml
+
+@model List<HungryHound.Models.Hotels>
+
+@{
+    ViewData["Title"] = "Hotel List";
+}
+
+<h2>Hotel List</h2>
+
+<a href="/FoodDelivery/CreateHotel">Create New Hotel</a>
+
+<table id="tblHotel" border="1">
+    <tr>
+        <th>Hotel Name</th>
+        <th>City</th>
+    </tr>
+    @foreach (var hotel in Model)
+    {
+        <tr>
+            <td>@hotel.HotelName</td>
+            <td>@hotel.City</td>
+        </tr>
+    }
+</table>
+
+
+
+
+CreateMenu.cshtml
+
+
+@model HungryHound.Models.Menu
+
+@{
+    ViewData["Title"] = "Create Menu";
+}
+
+<h2>Create Menu</h2>
+
+<form asp-action="CreateMenu" method="post">
+    <div>
+        <label asp-for="NameOfMenu"></label>
+        <input asp-for="NameOfMenu" />
+        <span asp-validation-for="NameOfMenu"></span>
+    </div>
+
+    <div>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+
+    <div>
+        <label asp-for="HotelId"></label>
+        <select asp-for="HotelId" asp-items="Model.HotelList"></select>
+        <span asp-validation-for="HotelId"></span>
+    </div>
+
+    <button type="submit" id="btnMenu">Create Menu</button>
+</form>
+
+<h2 id="Message">@ViewBag.Message</h2>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+GetMenuList.cshtml
+
+@model List<HungryHound.Models.Menu>
+
+@{
+    ViewData["Title"] = "Menu List";
+}
+
+<h2>Menu List</h2>
+
+<a href="/FoodDelivery/CreateMenu">Create New Menu</a>
+
+<table id="tblMenu" border="1">
+    <tr>
+        <th>Menu Name</th>
+        <th>Price</th>
+        <th>Hotel Id</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NameOfMenu</td>
+            <td>@item.Price</td>
+            <td>@item.HotelId</td>
+        </tr>
+    }
+</table>
+
+
+
+OrderPlacing.cshtml
+
+@model HungryHound.Models.Order
+
+@{
+    ViewData["Title"] = "Place Order";
+}
+
+<h2>Place Order</h2>
+
+<form asp-action="OrderPlacing" method="post">
+    <div>
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" />
+        <span asp-validation-for="Quantity"></span>
+    </div>
+
+    <div>
+        <label asp-for="MenuId"></label>
+        <select asp-for="MenuId" asp-items="Model.MenuList"></select>
+        <span asp-validation-for="MenuId"></span>
+    </div>
+
+    <button type="submit" id="btnOrder">Place Order</button>
+</form>
+
+<h2 id="Message">@ViewBag.Message</h2>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+GetOrderList.cshtml
+
+@model List<HungryHound.Models.Order>
+
+@{
+    ViewData["Title"] = "Order List";
+}
+
+<h2>Order List</h2>
+
+<a href="/FoodDelivery/OrderPlacing">Place New Order</a>
+
+<table id="tblOrder" border="1">
+    <tr>
+        <th>Quantity</th>
+        <th>Menu Id</th>
+    </tr>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>@order.Quantity</td>
+            <td>@order.MenuId</td>
+        </tr>
+    }
+</table>
